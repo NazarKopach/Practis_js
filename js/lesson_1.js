@@ -48,14 +48,58 @@
 // }
 // console.log(summ);
 
-function amount(max, min) {
-    let summ = 0;
-        for (let i = max; i >= min; i--) {
-        console.log(i);
-        if (i % 2 === 0) {
-        summ += i;
-        }
+// function amount(max, min) {
+//     let summ = 0;
+//         for (let i = max; i >= min; i--) {
+//         console.log(i);
+//         if (i % 2 === 0) {
+//         summ += i;
+//         }
+//     }
+//     return summ;
+// }
+// console.log(amount(20, 10));
+
+//=========TASK4==========//
+
+// Змінна num може набувати 4 значення: 1, 2, 3 або 4. Якщо вона має
+// значення '1', то у змінну result запишемо 'зима', якщо має значення
+// '2' - 'весна' і так далі. Розв'яжіть завдання через switch-case.
+
+// const num = Number(prompt("Enter number from 1 to 4"));
+// let result = '';
+// switch (num) {
+//     case 1:
+//         result = 'зима';
+//         break;
+//     case 2:
+//         result = 'весна';
+//         break;
+//     case 3:
+//         result = 'літо';
+//         break;
+//     case 4:
+//         result = 'осінь';
+//         break;
+//     default:
+//         result = 'Enter number from 1 to 4';
+// }
+// console.log(result)
+
+function checkSeasons(num) {
+    switch (num) {
+        case 1:
+            return 'зима';
+        case 2:
+            return 'весна';
+        case 3:
+            return 'літо';
+        case 4:
+            return 'осінь';
+        
+        default:
+            return 'Enter number from 1 to 4'
     }
-    return summ;
+
 }
-console.log(amount(20, 10));
+console.log(checkSeasons(2))
