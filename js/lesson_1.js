@@ -23,10 +23,39 @@
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
 // 70 === 01:10
 
-const answer = prompt('Enter number');
-let hours = parseInt(answer / 60);
-let minutes = answer % 60;
-hours = String(hours).padStart(2, '0');
-minutes = String(minutes).padStart(2, '0');
+// const answer = prompt('Enter number');
+// let hours = parseInt(answer / 60);
+// let minutes = answer % 60;
+// hours = String(hours).padStart(2, '0');
+// minutes = String(minutes).padStart(2, '0');
 
-console.log(`${hours}:${minutes}`);
+// console.log(`${hours}:${minutes}`);
+
+//=========TASK3==========//
+
+//Напишіть цикл, який виводить в консоль
+//числа от max до min по зменьшенню
+//Виведіть в консоль суму усіх парних чисел
+// const max = Number(prompt("Enter max number"));
+// const min = Number(prompt("Enter min number"));
+// let summ = 0;
+// for (let i = max; i >= min; i--) {
+//     console.log(i);
+//     if (i % 2 === 0) {
+//         summ += i;
+               
+//     }
+// }
+// console.log(summ);
+
+function amount(max, min) {
+    let summ = 0;
+        for (let i = max; i >= min; i--) {
+        console.log(i);
+        if (i % 2 === 0) {
+        summ += i;
+        }
+    }
+    return summ;
+}
+console.log(amount(20, 10));
