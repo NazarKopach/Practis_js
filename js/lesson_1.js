@@ -86,20 +86,51 @@
 // }
 // console.log(result)
 
-function checkSeasons(num) {
-    switch (num) {
-        case 1:
-            return 'зима';
-        case 2:
-            return 'весна';
-        case 3:
-            return 'літо';
-        case 4:
-            return 'осінь';
+// function checkSeasons(num) {
+//     switch (num) {
+//         case 1:
+//             return 'зима';
+//         case 2:
+//             return 'весна';
+//         case 3:
+//             return 'літо';
+//         case 4:
+//             return 'осінь';
         
-        default:
-            return 'Enter number from 1 to 4'
-    }
+//         default:
+//             return 'Enter number from 1 to 4'
+//     }
 
+// }
+// console.log(checkSeasons(2))
+
+//=========TASK5==========//
+
+//Напишіть код, який буде питати
+//логін за допомогою prompt и логіровати результат
+//в консоль браузера
+//Якщо користувач вводить "Адмін",
+//то prompt запрашує пароль.
+//Якщо ничого не ввели чи нажата клавіша Esc
+//вивести строку "Скасовано"
+//В противному випадку вивести рядок "Я вас не знаю"
+//Пароль перевіряти так:
+//Якщо введен пароль "Я головний",
+//то вивести рядок "Вітаю!"
+//в іншому випадку виводити рядок "Невірний пароль!"
+
+const userLogin = prompt('Enter login');
+console.log(userLogin);
+
+if (userLogin === 'Адмін') {
+	const userPassword = prompt('Enter Password');
+	if (userPassword === 'Я головний') {
+		alert('Вітаю!');
+	} else {
+		alert('Невірний пароль!');
+	}
+} else if (userLogin === null || userLogin === '') {
+	alert('Скасовано');
+} else {
+	alert('Я вас не знаю');
 }
-console.log(checkSeasons(2))
