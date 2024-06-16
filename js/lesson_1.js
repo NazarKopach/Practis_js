@@ -118,7 +118,7 @@
 //Якщо введен пароль "Я головний",
 //то вивести рядок "Вітаю!"
 //в іншому випадку виводити рядок "Невірний пароль!"
-
+/*
 const userLogin = prompt('Enter login');
 console.log(userLogin);
 
@@ -134,3 +134,12 @@ if (userLogin === 'Адмін') {
 } else {
 	alert('Я вас не знаю');
 }
+*/
+// Переверни рядок у зворотньому порядку
+ const string = "hello";
+let reversedString = '';
+for (let i = string.length -1; i >= 0; i--) {
+	
+	reversedString += string[i];
+}
+console.log(reversedString);
