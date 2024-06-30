@@ -68,10 +68,40 @@
 //<номер елемента> - <значення елемента>
 //Нумерація елементів має починатися з першого.
 //['Джаз', 'Блюз', 'Рок-н-рол', 'Реггі', 'Реп']
-const musicGenres = ['Джаз', 'Блюз', 'Рок-н-рол', 'Реггі', 'Реп'];
-function logItems(array) {
-    for (let i = 0; i < array.length; i++){
-        console.log(`${i+1} - ${array[i]}`)
-    }
-}
-logItems(musicGenres)
+// const musicGenres = ['Джаз', 'Блюз', 'Рок-н-рол', 'Реггі', 'Реп'];
+// function logItems(array) {
+//     for (let i = 0; i < array.length; i++){
+//         console.log(`${i+1} - ${array[i]}`)
+//     }
+// }
+// logItems(musicGenres)
+
+// * Літерал об'єкта
+//TODO:============task-1=========================
+// Створіть об'єкт "людина" з властивостями "ім'я", "хобі" і "вік". Напишіть метод "greet", який буде виводити на екран привітання з ім'ям людини.
+// Послідовно:
+// 1 додати поле mood зі значенням 'happy'
+// 2 замінити hobby на 'skydiving'
+
+// const human = {
+//     name: 'Mango',
+//     hobby: 'football',
+//     age: 27,
+//     greet() { // method
+//         console.log(`Hello ${this.name}!`);
+//     }
+    
+// }
+// human.mood = 'happy';
+// human.hobby = 'skydiving';
+// console.log(human);
+// human.greet();
+
+// const human1 = Object.create(human);
+// human1.name = 'Kiwi';
+// human1.greet();
+
+// for (const key in human) {
+//     console.log(key);
+//     console.log(human[key]);
+// }
