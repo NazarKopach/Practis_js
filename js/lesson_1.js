@@ -136,54 +136,54 @@ if (userLogin === 'Адмін') {
 }
 */
 // Переверни рядок у зворотньому порядку
- const string = "hello";
-let reversedString = '';
-for (let i = string.length -1; i >= 0; i--) {
+//  const string = "hello";
+// let reversedString = '';
+// for (let i = string.length -1; i >= 0; i--) {
 	
-	reversedString += string[i];
-}
-console.log(reversedString);
-const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
+// 	reversedString += string[i];
+// }
+// console.log(reversedString);
+// const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
 
-const firstTwoEls = fruits.slice(0, 2);
-const nonExtremeEls = fruits.slice(1, fruits.length - 1);
-const lastThreeEls = fruits.slice(-3);
+// const firstTwoEls = fruits.slice(0, 2);
+// const nonExtremeEls = fruits.slice(1, fruits.length - 1);
+// const lastThreeEls = fruits.slice(-3);
 
-console.log(firstTwoEls);
-console.log(nonExtremeEls);
-console.log(lastThreeEls);
+// console.log(firstTwoEls);
+// console.log(nonExtremeEls);
+// console.log(lastThreeEls);
 
-function getSlice(array, value) {
-	const element = array.indexOf(value);
-  if (element >= 0) {
-    return array.slice(0, element + 1);
-} else {
-  return '[]';
-	}
-}
-console.log(getSlice(["Mango", "Poly", "Ajax"], "Poly"));
-console.log(getSlice(["Mango", "Poly", "Ajax"], "Ajax"));
-console.log(getSlice(["Mango", "Poly", "Ajax"], "Mango"));
-console.log(getSlice(["Mango", "Poly", "Ajax"], "Jacob"));
-console.log(getSlice(["Mango", "Poly", "Ajax"], "Casey"))
-let min = 20;
-let max = 50;
-function createArrayOfNumbers(min, max) {
-  let numbers =[];
-  for (let i = min; i <= max; i++) {
-   numbers.push(i);
-  }
-   return numbers;
-}
+// function getSlice(array, value) {
+// 	const element = array.indexOf(value);
+//   if (element >= 0) {
+//     return array.slice(0, element + 1);
+// } else {
+//   return '[]';
+// 	}
+// }
+// console.log(getSlice(["Mango", "Poly", "Ajax"], "Poly"));
+// console.log(getSlice(["Mango", "Poly", "Ajax"], "Ajax"));
+// console.log(getSlice(["Mango", "Poly", "Ajax"], "Mango"));
+// console.log(getSlice(["Mango", "Poly", "Ajax"], "Jacob"));
+// console.log(getSlice(["Mango", "Poly", "Ajax"], "Casey"))
+// let min = 20;
+// let max = 50;
+// function createArrayOfNumbers(min, max) {
+//   let numbers =[];
+//   for (let i = min; i <= max; i++) {
+//    numbers.push(i);
+//   }
+//    return numbers;
+// }
 
-console.log(createArrayOfNumbers(20, 50))
-function checkStorage(storage, item) {
-  //const lowerCaseStorage = storage.toLowerCase;
-  //const lowerCaseItem = item.toLowerCase;
-  if (storage.includes(item.toLowerCase())) {
-    return `${item.toLowerCase()} is available to order!`;
-  } else {
-    return `Sorry! We are out of stock!`;
-  }
-}
-console.log(checkStorage(["apple", "plum", "pear"], "Plum"));
+// console.log(createArrayOfNumbers(20, 50))
+// function checkStorage(storage, item) {
+//   //const lowerCaseStorage = storage.toLowerCase;
+//   //const lowerCaseItem = item.toLowerCase;
+//   if (storage.includes(item.toLowerCase())) {
+//     return `${item.toLowerCase()} is available to order!`;
+//   } else {
+//     return `Sorry! We are out of stock!`;
+//   }
+// }
+// console.log(checkStorage(["apple", "plum", "pear"], "Plum"));
