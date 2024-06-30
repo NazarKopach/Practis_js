@@ -59,3 +59,19 @@
 //   number % 2 === 0 ? evenArray.push(number) : oddArray.push(number);
 // }
 // console.log(evenArray, oddArray);
+
+
+//TODO:============task-04==============
+//Напишіть функцію logItems(array), яка приймає
+//масив та використовує цикл for, який для кожного
+//елемента масиву виводитиме повідомлення у форматі
+//<номер елемента> - <значення елемента>
+//Нумерація елементів має починатися з першого.
+//['Джаз', 'Блюз', 'Рок-н-рол', 'Реггі', 'Реп']
+const musicGenres = ['Джаз', 'Блюз', 'Рок-н-рол', 'Реггі', 'Реп'];
+function logItems(array) {
+    for (let i = 0; i < array.length; i++){
+        console.log(`${i+1} - ${array[i]}`)
+    }
+}
+logItems(musicGenres)
