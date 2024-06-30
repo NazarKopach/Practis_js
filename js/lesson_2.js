@@ -105,3 +105,41 @@
 //     console.log(key);
 //     console.log(human[key]);
 // }
+
+
+//TODO:============task-2======================================================
+// У нас є об'єкт, у якому зберігатимуться зарплати
+// нашої команди
+// Напишіть код для сумування всіх зарплат і
+// збережіть його результат у змінній sum.
+// Якщо об'єкт salaries порожній, то результат має бути 0
+
+// const salaries = {
+//     Mango: 100,
+//     Poly: 160,
+//     Ajax: 1470,
+//   };
+
+//   function totalSalaries(object) {
+//     let total = 0;
+//     for (const key in object) {
+//         total += object[key];
+//     }
+//     return total;
+//   }
+//   console.log(totalSalaries(salaries));
+
+//   function totalSalaries(object) {
+//     let total = 0;
+//     for (const number of Object.values(object)) {
+//         total += number;
+//     }
+//     return total;
+//   }
+//   console.log(totalSalaries(salaries));
+
+//   console.log(Object.keys(salaries));
+
+//   console.log(Object.values(salaries));
+
+//   console.log(Object.entries(salaries));
