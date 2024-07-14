@@ -141,14 +141,36 @@ const users = [
 /// Виведення міст має бути у хронологічному порядку
 /// Міста у яких концерт вже пройшов потрібно виключити
 /// Результат ["Київ", "Умань", "Одеса"]
-const concerts = {
-  Київ: new Date("2024-08-01"),
-  Умань: new Date("2024-07-02"),
-  Вінниця: new Date("2024-07-21"),
-  Одеса: new Date("2024-07-15"),
-  Хмельницький: new Date("2023-04-18"),
-  Харків: new Date("2023-07-10"),
-};
-const cities = Object.keys(concerts);
-const newConcerts = cities.filter(city => concerts[city] > new Date()).toSorted((a, b) => a.localeCompare(b));
-console.log(newConcerts);
+// const concerts = {
+//   Київ: new Date("2024-08-01"),
+//   Умань: new Date("2024-07-02"),
+//   Вінниця: new Date("2024-07-21"),
+//   Одеса: new Date("2024-07-15"),
+//   Хмельницький: new Date("2023-04-18"),
+//   Харків: new Date("2023-07-10"),
+// };
+// const cities = Object.keys(concerts);
+// const newConcerts = cities.filter(city => concerts[city] > new Date()).toSorted((a, b) => a.localeCompare(b));
+// console.log(newConcerts);
+
+//1. Створи клас User для створення користувача з такими властивостями:
+//a. userName - ім'я, рядок
+//b. age - вік, число
+//c. numbersOfPost - кількість постів, число
+//d. конструктор очікує 1 параметр - об'єкт налаштувань з однойменними властивостями
+//Додай метод getInfo(), який повертає рядок:
+//`Користувачеві <name> <age> років і в нього <posts> публікацій.`
+
+class User {
+  constructor(obj) {
+    this.userName = obj.name;
+    this.age = obj.age;
+    this.numberOfPost = obj.numberOfPost;
+  }
+  getInfo() {
+    return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numberOfPost} публікацій.`
+  }
+}
+
+const user = new User({ name: 'Nazar', age: 20, numberOfPost: 4 })
+console.log(user.getInfo());
