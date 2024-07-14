@@ -161,16 +161,98 @@ const users = [
 //Додай метод getInfo(), який повертає рядок:
 //`Користувачеві <name> <age> років і в нього <posts> публікацій.`
 
-class User {
-  constructor(obj) {
-    this.userName = obj.name;
-    this.age = obj.age;
-    this.numberOfPost = obj.numberOfPost;
+//class User {
+  //constructor(obj) {
+    //this.userName = obj.name;
+    //this.age = obj.age;
+    //this.numberOfPost = obj.numberOfPost;
+  //}
+  //getInfo() {
+    //return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numberOfPost} публікацій.`
+  //}
+//}
+
+//const user = new User({ name: 'Nazar', age: 20, numberOfPost: 4 })
+//console.log(user.getInfo());
+
+
+//3. Напиши класс Notes який управляє коллекцієй нотаток у
+//властивості items.
+//Нотатка це  об'єкт з властивостями text, priority
+//Додай класу статичну властивість Priority,
+//в якій буде зберігатись об'єкт з пріорітетами ("hight", "middle", "low").
+//Додай методи addNote(note), removeNote(noteText)
+//updatePriority(noteText, newPriority)
+
+class Notes {
+  static Priority = {
+    HIGHT: 'hight',
+    MIDDLE: 'middle',
+    LOW: 'low',
   }
-  getInfo() {
-    return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numberOfPost} публікацій.`
+  constructor() {
+    this.items = [];
+  }
+  addNote(note) { 
+    this.items.push(note);
+  }
+  removeNote(noteText) {
+    this.items = this.items.filter(item => item.text !== noteText);
+  }
+  updatePriority(noteText, newPriority) {
+    const note = this.items.find(item => item.text === noteText) 
+      if (note) {
+        note.priority = newPriority;
+     }
   }
 }
+const note = new Notes();
+console.log(note);
+ note.addNote({ text: "Note1", priority: Notes.Priority.LOW });
+ note.addNote({ text: "Note2", priority: Notes.Priority.LOW });
+ note.addNote({ text: "Note3", priority: Notes.Priority.HIGHT });
+ note.updatePriority("Note2", Notes.Priority.MIDDLE );
+ note.updatePriority("Note3", Notes.Priority.MIDDLE );
+note.removeNote("Note1");
+console.table(note.items);
 
-const user = new User({ name: 'Nazar', age: 20, numberOfPost: 4 })
-console.log(user.getInfo());
+//2. Напиши класс Client який створює об'єкт
+//із властивостями login, email
+//Об'яви приватні властивості #login і #email,
+//доступ до яких зроби через геттер и сеттер:
+// get getClientData() має повертати об'єкт з переліченими властивостями
+// set changeEmail(newEmail) перезаписує пошту користувача
+
+// 4. Створити клас Worker, у якого є властивості name, age, salary.
+//У класу Worker є метод getSalary, який повертає повідомлення
+//"Worker <name> has salary <salary> dollars"
+//Створити клас WorkerPosition, у якого є властивість position
+//і який успадковує клас Worker, додаючи метод getPosition
+// який повертає повідомлення "<name> works as <position>"
+
+// Reverse. Напишіть функцію, яка розгортає масив у зворотному порядку.
+// Будь ласка, не використовуйте array.reverse(), щоб зробити завдання цікавішим.
+// const data = [10, 20, 30, 40, 50, 60];
+// const alphData = ["a", "b", "c", "d", "e"];
+
+// Знайти найдорожчий продукт у категорії "meat"
+// Напиши для цього функцію getMostExpensiveMeatProduct(products)
+// const products = [
+//   { name: 'Apple', category: 'fruits', price: 1.2, stock: 50 },
+//   { name: 'Banana', category: 'fruits', price: 0.8, stock: 100 },
+//   { name: 'Carrot', category: 'vegetables', price: 0.5, stock: 200 },
+//   { name: 'Broccoli', category: 'vegetables', price: 1.0, stock: 150 },
+//   { name: 'Milk', category: 'dairy', price: 1.5, stock: 20 },
+//   { name: 'Cheese', category: 'dairy', price: 2.5, stock: 5 },
+//   { name: 'Chicken', category: 'meat', price: 5.0, stock: 30 },
+//   { name: 'Beef', category: 'meat', price: 7.0, stock: 25 }
+// ];
+
+// Є масив чисел, наприклад: arr = [1,2,3,4,5]
+// Напишіть функцію getSums(arr), яка повертає масив його часткових сум.
+// Іншими словами, виклик getSums(arr) має повертати новий масив з такої ж
+// кількості елементів, в якому на кожній позиції буде сума елементів масива
+// до цієї позиції включно
+// Наприклад: для arr = [1,2,3,4,5]
+// getSums( arr ) = [ 1, 1+2, 1+2+3, 1+2+3+4, 1+2+3+4+5 ] = [ 1, 3, 6, 10, 15 ]
+// Функція не має змінювати вхідний масив
