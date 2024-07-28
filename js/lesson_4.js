@@ -99,14 +99,51 @@
 //  повідомлення з назвою продукту та його ціною.
 //  "Ви вибрали <product> за <price>".
 
-const tableEl = document.querySelector("#productTable");
-const productDetails = document.querySelector("#productDetails");
-const showMessage = (event) => {
-  if (event.target.nodeName !== "TD") return;
-  const parent = event.target.parentNode;
-  const product = parent.firstElementChild.textContent;
-  const price = parent.lastElementChild.textContent;
-  productDetails.textContent = `Ви вибрали ${product.toLowerCase()} за ${price}`;
-};
+// const tableEl = document.querySelector("#productTable");
+// const productDetails = document.querySelector("#productDetails");
+// const showMessage = (event) => {
+//   if (event.target.nodeName !== "TD") return;
+//   const parent = event.target.parentNode;
+//   const product = parent.firstElementChild.textContent;
+//   const price = parent.lastElementChild.textContent;
+//   productDetails.textContent = `Ви вибрали ${product.toLowerCase()} за ${price}`;
+// };
 
-tableEl.addEventListener("click", showMessage);
+// tableEl.addEventListener("click", showMessage);
+
+// Функція має створювати стільки <div> елементів, скільки вказано в параметрі amount. Усі ці <div> мають додаватися за одну операцію у DOM дочірніми елементами для div#boxes.
+// Розміри першого <div> елемента мають бути 30px на 30px.
+// Кожен наступний елемент повинен бути ширшим і вищим від попереднього на 10px.
+// Усі елементи повинні мати випадковий колір фону. Використовуй готову функцію getRandomHexColor() для отримання випадкового кольору.
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+
+const input = document.querySelector('[type="number"]');
+const btnCreate = document.querySelector("[data-create]");
+const btnDestroy = document.querySelector("[data-destroy]");
+const boxes = document.querySelector("#boxes");
+
+btnCreate.addEventListener("click", () => {
+  const amount = Number(input.value);
+  if (amount >= 1 && amount <= 100) {
+    createBoxes(amount);
+  }
+});
+function createBoxes(amount) {
+  boxes.innerHTML = "";
+  let size = 30;
+  const divs = [];
+  for (let i = 1; i <= amount; i += 1) {
+    const div = document.createElement("div");
+    div.style.backgroundColor = getRandomHexColor();
+    div.style.width = `${size}px`;
+    div.style.height = `${size}px`;
+    divs.push(div);
+    size += 10;
+  }
+  boxes.append(...divs);
+}
