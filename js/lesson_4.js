@@ -61,7 +61,6 @@
 //         <P>Tags: ${tags.join(", ")}</P>
 //       </li>`).join("");
 
-
 // }
 // const markup = createHtml(tweets);
 // tweetsList.innerHTML = markup;
@@ -69,29 +68,45 @@
 // Створити невелику гру
 // Спочатку на екрані з'являється якась фігура рандомного коліру в рандомному місті
 // Натискаючі на фігуру, вона змінює свою форму, колір, місце розташування
-const forms = [
-  "width: 100px; height: 100px; border-width: 1px;",
-  "width: 100px; height: 100px; border-radius: 50%;",
-  "width: 150px; height: 100px; border-width: 1px;",
-  "width: 200px; height: 100px; border-radius: 100px / 50px; ",
-  "width: 150px; height: 100px; transform: skew(20deg)",
-];
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-}
-function randomither(max) {
-  return Math.floor(Math.random() * max);
-}
-const form = document.createElement("div");
-changeForm();
-document.body.append(form);
+// const forms = [
+//   "width: 100px; height: 100px; border-width: 1px;",
+//   "width: 100px; height: 100px; border-radius: 50%;",
+//   "width: 150px; height: 100px; border-width: 1px;",
+//   "width: 200px; height: 100px; border-radius: 100px / 50px; ",
+//   "width: 150px; height: 100px; transform: skew(20deg)",
+// ];
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+// }
+// function randomither(max) {
+//   return Math.floor(Math.random() * max);
+// }
+// const form = document.createElement("div");
+// changeForm();
+// document.body.append(form);
 
-function changeForm() {
-  form.style.cssText = forms[randomither(forms.length)];
-  form.style.backgroundColor = getRandomHexColor();
-  form.style.position = "absolute";
-  form.style.top = `${randomither(100)}%`;
-  form.style.left = `${randomither(100)}%`;
-}
+// function changeForm() {
+//   form.style.cssText = forms[randomither(forms.length)];
+//   form.style.backgroundColor = getRandomHexColor();
+//   form.style.position = "absolute";
+//   form.style.top = `${randomither(100)}%`;
+//   form.style.left = `${randomither(100)}%`;
+// }
 
-form.addEventListener("click", changeForm)
+// form.addEventListener("click", changeForm)
+
+//  При натисканні на будь-який рядок у табличці відобразіть
+//  повідомлення з назвою продукту та його ціною.
+//  "Ви вибрали <product> за <price>".
+
+const tableEl = document.querySelector("#productTable");
+const productDetails = document.querySelector("#productDetails");
+const showMessage = (event) => {
+  if (event.target.nodeName !== "TD") return;
+  const parent = event.target.parentNode;
+  const product = parent.firstElementChild.textContent;
+  const price = parent.lastElementChild.textContent;
+  productDetails.textContent = `Ви вибрали ${product.toLowerCase()} за ${price}`;
+};
+
+tableEl.addEventListener("click", showMessage);
